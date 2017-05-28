@@ -1,17 +1,15 @@
-require.config({
-	paths: {
-		
-		"jquery" : "vendor/jquery/dist/jquery",
-		"underscore" : "vendor/underscore/underscore",
-		"backbone" : "vendor/backbone/backbone",
-		"text" : "vendor/text/text",
+define(['navList',
+    'jquery',
+    'collection',
+    'router',
+    'backbone',
+    'underscore'
+], function(navList, $, colect, router, Backbone, _) {
 
-		//view
-		"view" : "views/view"
-	}
-});
+	Backbone.history.start();
+    var Router = new router();
 
-require(['view', 'jquery'], function(view, $) {
-	var e = new view();
-	$('body').append(e.render().el);
+    
+    console.log('Router: ', Router);
+
 })
